@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors[] = 'Name is empty';
     }
     else {
-        echo "At Name Field";
+        $errors[] = 'Name is not empty';
     }
 
     if (empty($Email)) {
