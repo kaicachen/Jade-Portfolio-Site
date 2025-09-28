@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="fonts.css">
+<script src="./scripts.js"></script>
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 .w3-third img{margin-bottom: -6px; opacity: 0.8; cursor: pointer}
@@ -17,8 +18,20 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center" style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
   <h3 class="w3-padding-64 w3-center"><a href="./index.html"><b>JADE<br>ACHEN</b></a></h3>
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
-  <a href="#" onclick="w3_close()" class="w3-bar-item w3-button">PORTFOLIO</a> 
+  
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-hide-large">CLOSE</a>
+
+  <!-- Portfolio item with toggle -->
+  <a href="javascript:void(0)" onclick="toggleSubmenu()" class="w3-bar-item w3-button">PORTFOLIO &#9662;</a>
+
+  <!-- Submenu -->
+  <div id="portfolioSubmenu" style="display:none; padding-left:50px;" class="w3-bar-block">
+    <a href="./hachi.html" onclick="w3_close()" class="w3-bar-item w3-button">HACHI</a>
+    <a href="./basis.html" onclick="w3_close()" class="w3-bar-item w3-button">BASIS</a>
+    <a href="./split.html" onclick="w3_close()" class="w3-bar-item w3-button">SPLIT</a>
+    <a href="./sunwareset.html" onclick="w3_close()" class="w3-bar-item w3-button">SUNWARE SET</a>
+  </div>
+
   <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT ME</a> 
   <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
 </nav>
@@ -316,29 +329,5 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 <!-- End page content -->
 </div>
-
-<script>
-// Script to open and close sidebar
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
-  document.getElementById("myOverlay").style.display = "block";
-}
- 
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-  document.getElementById("myOverlay").style.display = "none";
-}
-
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
-
-</script>
-
-
 </body>
 </html>

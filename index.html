@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="fonts.css">
+<script src="./scripts.js"></script>
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 .w3-third img{margin-bottom: -6px; opacity: 0.8; cursor: pointer}
@@ -252,37 +253,6 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 <!-- End page content -->
 </div>
-
-<script>
-// Script to open and close sidebar
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
-  document.getElementById("myOverlay").style.display = "block";
-}
- 
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-  document.getElementById("myOverlay").style.display = "none";
-}
-
-// Modal Image Gallery
-function onClick(element) {
-    const targetUrl = element.getAttribute("data-url");
-    
-    if (targetUrl) {
-        window.location.href = targetUrl;
-    } else {
-        console.warn("No data-url attribute found on the clicked element.");
-    }
-}
-
-function toggleSubmenu() {
-    var submenu = document.getElementById("portfolioSubmenu");
-    submenu.style.display = (submenu.style.display === "block") ? "none" : "block";
-  }
-
-</script>
-
 
 </body>
 </html>
