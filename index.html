@@ -1,257 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<title>Jade Achen Portfolio</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="fonts.css">
-<script src="./scripts.js"></script>
-<style>
-body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-.w3-third img{margin-bottom: -6px; opacity: 0.8; cursor: pointer}
-.w3-third img:hover{opacity: 1}
-</style>
-</head>
-<body class="w3-light-grey w3-content" style="max-width:1600px">
-
-<!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-bar-block w3-green w3-animate-left w3-text-black w3-collapse w3-top w3-center" style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
-  <h3 class="w3-padding-64 w3-center"><a href="./index.html"><b>JADE<br>ACHEN</b></a></h3>
-  
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-hide-large">CLOSE</a>
-
-  <!-- Portfolio item with toggle -->
-  <a href="javascript:void(0)" onclick="toggleSubmenu()" class="w3-bar-item w3-button">PORTFOLIO &#9662;</a>
-
-  <!-- Submenu -->
-  <div id="portfolioSubmenu" style="display:none; padding-left:50px;" class="w3-bar-block">
-    <a href="./hachi.html" onclick="w3_close()" class="w3-bar-item w3-button">HACHI</a>
-    <a href="./basis.html" onclick="w3_close()" class="w3-bar-item w3-button">BASIS</a>
-    <a href="./split.html" onclick="w3_close()" class="w3-bar-item w3-button">SPLIT</a>
-    <a href="./sunwareset.html" onclick="w3_close()" class="w3-bar-item w3-button">SUNWARE SET</a>
-  </div>
-
-  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT ME</a>
-</nav>
-
-<!-- Top menu on small screens -->
-<header class="w3-container w3-top w3-hide-large w3-green w3-xlarge w3-padding-16">
-  <span class="w3-left w3-padding w3-text-black"><a href="./index.html">JADE ACHEN</a></span>
-  <a href="javascript:void(0)" class="w3-right w3-button" onclick="w3_open()">☰</a>
-</header>
-
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:300px">
-
-  <!-- Push down content on small screens --> 
-  <div class="w3-hide-large" style="margin-top:83px"></div>
-  
-  <!-- Photo grid -->
-  <div class="w3-row">
-  <div class="w3-half hover-container">
-    <div class="image-wrapper">
-      <img src="./media/hachi-thumb.png" class="hover-image" style="width:100%" onclick="onClick(this)" data-url="./hachi.html" alt="HACHI Hydroponic System">
-      <div class="overlay-text">HACHI Hydroponic System</div>
-    </div>
-    <div class="image-wrapper">
-      <img src="./media/basis-thumb.png" class="hover-image" style="width:100%" onclick="onClick(this)" alt="BASIS Desk Organization">
-      <div class="overlay-text">BASIS Desk Organization</div>
-    </div>
-  </div>
-
-  <div class="w3-half hover-container">
-    <div class="image-wrapper">
-      <img src="./media/split-thumb.png" class="hover-image" style="width:100%" onclick="onClick(this)" alt="SPLIT Salt & Pepper Grinders">
-      <div class="overlay-text">SPLIT Salt & Pepper Grinders</div>
-    </div>
-    <div class="image-wrapper">
-      <img src="./media/sunware-thumb.png" class="hover-image" style="width:100%" onclick="onClick(this)" alt="SUNWARE SET Furniture Set">
-      <div class="overlay-text">SUNWARE SET Furniture Set</div>
-    </div>
-  </div>
-</div>
-
-  <!-- Pagination -->
-  <!-- <div class="w3-center w3-padding-32">
-    <div class="w3-bar">
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
-      <a href="#" class="w3-bar-item w3-black w3-button">1</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
-    </div>
-  </div> -->
-  
-  <!-- Modal for full size images on click-->
-  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
-    <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
-    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-      <img id="img01" class="w3-image">
-      <p id="caption"></p>
-    </div>
-  </div>
-
-  <!-- About section -->
-  <div class="w3-container w3-pale-green w3-center w3-text-black w3-padding-32" id="about">
-    <h4><b>About Me</b></h4>
-    <img src="./media/jade-achen.png" alt="Jade Achen" class="w3-image w3-padding-32" width="250" height="650">
-    <div class="w3-content w3-justify" style="max-width:600px">
-      <h4>Hi, I'm Jade!</h4>
-      <p>I’m Jade Achen a current third year industrial design student at Kansas State University.
-        I am an artist and designer with a passion for connecting with and helping communities.
-      </p>
-      <p>LinkedIn<i class="fa-brands fa-linkedin"></i>: Jade Achen</p>
-      <p>E-mail<i class="fa-solid fa-envelope"></i>: jade.achen@gmail.com</p>
-      <p>Phone<i class="fa-solid fa-phone"></i>: +913 904 4635</p>
-      <hr class="w3-opacity">
-      <h4 class="w3-padding-16">EDUCATION</h4>
-      <p class="w3-wide">KANSAS STATE UNIVERSITY 2023-2025</p>
-      <p>Master’s of industrial Design<br>
-        Expected graduate 2028</p>
-      <div class="w3-white">
-        <div class="w3-container w3-padding-small w3-center w3-pale-red" style="width:40%">40%</div>
-      </div>
-
-      <hr class="w3-opacity">
-      <h4 class="w3-padding-16">EXPERIENCE</h4>
-      <p class="w3-wide">STUDENT GRAPHIC DESIGNER</p>
-      <p>K-State Housing/Dining Retail <br>
-        08/2024 - Present</p>
-      
-      <hr class="w3-opacity">
-      <h4 class="w3-padding-16">SOFTWARE</h4>
-      <ul class="three-column">
-      <li><p class="w3-wide">Indesign</p></li>
-      <li><p class="w3-wide">Illustrator</p></li>
-      <li><p class="w3-wide">Photoshop</p></li>
-      <li><p class="w3-wide">Keyshot</p></li>
-      <li><p class="w3-wide">Rhino</p></li>
-      <li><p class="w3-wide">Fusion 360</p></li>
-      </ul>
-
-      <hr class="w3-opacity">
-      <h4 class="w3-padding-16">TECHNICAL SKILLS</h4>
-      <ul class="two-column">
-      <li><p class="w3-wide">Analogue Sketching</p></li>
-      <li><p class="w3-wide">Collaboration</p></li>
-      <li><p class="w3-wide">Detail-Oriented</p></li>
-      <li><p class="w3-wide">Time Management</p></li>
-      </ul>
-      <p>
-        <form method="get" action="./media/Timmy1.jpg" target="_blank" rel="noopener noreferrer">
-            <button class="w3-button w3-green w3-padding-large w3-margin-top w3-margin-bottom w3-text-black"><u>Download PDF Portfolio</u></button>
-        </form>
-      </p>
-      <!-- <hr class="w3-opacity"> -->
-
-      <!-- <h4 class="w3-padding-16">How much I charge</h4>
-      <div class="w3-row-padding" style="margin:0 -16px">
-        <div class="w3-half w3-margin-bottom">
-          <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-            <li class="w3-black w3-xlarge w3-padding-32">Basic</li>
-            <li class="w3-padding-16">Web Design</li>
-            <li class="w3-padding-16">Photography</li>
-            <li class="w3-padding-16">5GB Storage</li>
-            <li class="w3-padding-16">Mail Support</li>
-            <li class="w3-padding-16">
-              <h2>$ 10</h2>
-              <span class="w3-opacity">per month</span>
-            </li>
-            <li class="w3-light-grey w3-padding-24">
-              <button class="w3-button w3-white w3-padding-large">Sign Up</button>
-            </li>
-          </ul>
-        </div>
-        
-        <div class="w3-half">
-          <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-            <li class="w3-black w3-xlarge w3-padding-32">Pro</li>
-            <li class="w3-padding-16">Web Design</li>
-            <li class="w3-padding-16">Photography</li>
-            <li class="w3-padding-16">50GB Storage</li>
-            <li class="w3-padding-16">Endless Support</li>
-            <li class="w3-padding-16">
-              <h2>$ 25</h2>
-              <span class="w3-opacity">per month</span>
-            </li>
-            <li class="w3-light-grey w3-padding-24">
-              <button class="w3-button w3-white w3-padding-large">Sign Up</button>
-            </li>
-          </ul>
-        </div> -->
-      </div>
-    </div>
-  </div>
-
-  <!-- Contact section -->
-  <!-- <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">
-    <div class="w3-content" style="max-width:600px">
-      <h4 class="w3-center"><b>Contact Me</b></h4>
-      <p>Do you want to hire me? Send me an E-mail!</p>
-      <form name="contact" method="POST" data-netlify="true">
-        <div class="w3-section">
-          <label>Name</label>
-          <input class="w3-input w3-border" type="text" name="Name" required>
-        </div>
-        <div class="w3-section">
-          <label>Email</label>
-          <input class="w3-input w3-border" type="text" name="Email" required>
-        </div>
-        <div class="w3-section">
-          <label>Message</label>
-          <input class="w3-input w3-border" type="text" name="Message" required>
-        </div>
-        <button type="submit" class="w3-button w3-block w3-black w3-margin-bottom">Send Message</button>
-      </form>
-    </div>
-  </div> -->
-
-  <!-- Footer -->
-  <!-- <footer class="w3-container w3-padding-32 w3-grey">  
-    <div class="w3-row-padding">
-      <div class="w3-third">
-        <h3>INFO</h3>
-        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>      
-      </div>
-    
-      <div class="w3-third">
-        <h3>BLOG POSTS</h3>
-        <ul class="w3-ul">
-          <li class="w3-padding-16 w3-hover-black">
-            <img src="./media/Timmy2.jpg" class="w3-left w3-margin-right" style="width:50px">
-            <span class="w3-large">Lorem</span><br>
-            <span>Sed mattis nunc</span>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Portfolio Page Template</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+	<link href="css/jachen.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Jade Achen</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
-          <li class="w3-padding-16 w3-hover-black">
-            <img src="./media/Timmy3.jpg" class="w3-left w3-margin-right" style="width:50px">
-            <span class="w3-large">Ipsum</span><br>
-            <span>Praes tinci sed</span>
-          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Projects
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
         </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
       </div>
-
-      <div class="w3-third">
-        <h3>POPULAR TAGS</h3>
-        <p>
-          <span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">London</span>
-          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">IKEA</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">NORWAY</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">DIY</span>
-          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Ideas</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Baby</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Family</span>
-          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">News</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Clothing</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Shopping</span>
-          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Sports</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Games</span>
-        </p>
+    </nav>
+    <section>
+      <div class="jumbotron text-center mt-2">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h1>Hi, I'm Jade!<img class="rotate ml-5 mb-5" src="images/jade-achen.png" width="350" height="440" alt="Jade Achen portrait"/></h1>
+              <p>I’m Jade Achen a current third year 
+                industrial design student at Kansas 
+                State University.<br>
+                I am an artist and designer with a 
+                passion for connecting with and
+              helping communities.</p>
+              <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h1>Projects</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, magni, doloribus, possimus eum sapiente deleniti doloremque fugit ut expedita molestiae iusto debitis eveniet modi obcaecati ipsam quos quis labore dicta.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container mt-2">
+        <div class="row">
+          <div class="col-md-4 col-12">
+            <ul class="list-unstyled">
+              <li class="media">
+                <img class="mr-3" src="images/hachi-thumb.png" width="300" height="300" alt="Hachi project thumbnail">
+                <div class="media-body">
+                  <h5 class="mt-0 mb-1">Hachi</h5>
+                  Hydroponic System
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4 col-12">
+            <ul class="list-unstyled">
+              <li class="media">
+                <img class="mr-3" src="images/basis-thumb.png" width="300" height="300" alt="Basis project thumbnail">
+                <div class="media-body">
+                  <h5 class="mt-0 mb-1">Basis</h5>
+                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4 col-12">
+            <ul class="list-unstyled">
+              <li class="media">
+                <img class="mr-3" src="images/split-thumb.png" width="300" height="300"  alt="Split project thumbnail">
+                <div class="media-body">
+                  <h5 class="mt-0 mb-1">Split</h5>
+                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h2>Latest Work</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, et, placeat !</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-12 text-center">
+            <img class="img-fluid" src="images/400x400.gif" alt="">
+            <h4>Lorem ipsum dolor sit amet, consectetur elit</h4>
+            <h6>Lorem ipsum dolor sit amet, consectetur elit</h6>
+          </div>
+          <div class="col-md-6 col-12 text-center mt-md-0 mt-2">
+            <img class="img-fluid" src="images/400x400.gif" alt="">
+            <h4>Lorem ipsum dolor sit amet, consectetur elit</h4>
+            <h6>Lorem ipsum dolor sit amet, consectetur elit</h6>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-md-3 col-6"><img class="img-fluid float-right" src="images/200x200.gif" alt=""></div>
+          <div class="col-md-3 col-6"><img class="img-fluid float-left" src="images/200x200.gif" alt=""></div>
+          <div class="col-md-3 col-6 mt-md-0 mt-1"><img class="img-fluid float-right" src="images/200x200.gif" alt=""></div>
+          <div class="col-md-3 col-6 mt-md-0 mt-1"><img class="img-fluid float-left" src="images/200x200.gif" alt=""></div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-3 col-6"><img class="img-fluid float-right" src="images/200x200.gif" alt=""></div>
+          <div class="col-md-3 col-6"><img class="img-fluid float-left" src="images/200x200.gif" alt=""></div>
+          <div class="col-md-3 col-6 mt-md-0 mt-1"><img class="img-fluid float-right" src="images/200x200.gif" alt=""></div>
+          <div class="col-md-3 col-6 mt-md-0 mt-1"><img class="img-fluid float-left" src="images/200x200.gif" alt=""></div>
+        </div>
+      </div>
+    </section>
+    <hr>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h1>Lorem ipsum dolor sit amet</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, magni, doloribus, possimus eum sapiente deleniti doloremque fugit ut expedita molestiae iusto debitis eveniet modi obcaecati ipsam quos quis labore dicta.</p>
+            <button type="button" class="btn btn-success">Get in touch</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-12">
+            <h3 class="text-center">WHO WE ARE</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, ducimus, sit, quibusdam quidem recusandae veniam eos quod error nisi repellat excepturi laboriosam aspernatur suscipit possimus consectetur dolores nihil labore quas eius illo accusamus nulla sed blanditiis porro accusantium. Perspiciatis, perferendis!</p>
+          </div>
+          <div class="col-md-4 col-12">
+            <h3 class="text-center">GET IN TOUCH</h3>
+            <address class="text-center">
+              <strong>MyCompany, Inc.</strong><br>
+              Sunny Autumn Plaza, Grand Coulee,<br>
+              CA, 91308-4075, US<br>
+              <abbr title="Phone">P:</abbr> (123) 456-7890
+            </address>
+          </div>
+          <div class="col-md-4 col-12">
+            <h3 class="text-center">NEWSLETTER</h3>
+            <form>
+              <div class="form-group col-12">
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                <button type="submit" class="btn btn-dark mt-2">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
-  </footer> -->
-  
-  <div class="w3-black w3-center w3-padding-24">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></div>
-
-<!-- End page content -->
-</div>
-
-</body>
+    <hr>
+    <footer class="text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <p>Copyright © MyCompany. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap-4.4.1.js"></script>
+  </body>
 </html>
