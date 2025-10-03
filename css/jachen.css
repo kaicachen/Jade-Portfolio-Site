@@ -2,3 +2,53 @@
 /* CSS Document */
 
 img.rotate {transform: rotate(5deg);}
+
+.image-wrapper {
+  position: relative;
+  width: 300px !important;
+  height: 300px !important;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.hover-image {
+  display: block;
+  width: 300px !important;
+  height: 300px !important;
+  object-fit: cover;
+  max-width: none;
+  transition: opacity 0.3s ease;
+}
+
+.image-wrapper:hover .hover-image {
+  opacity: 0.6;
+}
+
+.overlay-text {
+  position: absolute;
+  inset: 0; /* fills the parent container */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-size: 2em;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.image-wrapper:hover .overlay-text {
+  opacity: 1;
+}
+
+/* <div class="w3-half hover-container">
+    <div class="image-wrapper">
+      <img src="./media/hachi-thumb.png" class="hover-image" style="width:100%" onclick="onClick(this)" data-url="./hachi.html" alt="HACHI Hydroponic System">
+      <div class="overlay-text">HACHI Hydroponic System</div>
+    </div>
+    <div class="image-wrapper">
+      <img src="./media/basis-thumb.png" class="hover-image" style="width:100%" onclick="onClick(this)" alt="BASIS Desk Organization">
+      <div class="overlay-text">BASIS Desk Organization</div>
+    </div>
+  </div> */

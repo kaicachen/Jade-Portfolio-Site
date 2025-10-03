@@ -8,40 +8,42 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
 	<link href="css/jachen.css" rel="stylesheet">
+  <script src="./js/scripts.js"></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Jade Achen</a>
+      <a class="navbar-brand" href="./index.html">Jade Achen</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
-          </li>
+          </li> -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Projects
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
+              <a class="dropdown-item" href="./hachi.html">HACHI</a>
+              <a class="dropdown-item" href="./split.html">SPLIT</a>
+              <a class="dropdown-item" href="./basis.html">BASIS</a>
+              <a class="dropdown-item" href="./sunware.html">SUNWARE SET</a>
+              <!-- <div class="dropdown-divider"></div> -->
             </div>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
+          </li> -->
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+        <!-- <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        </form> -->
       </div>
     </nav>
     <section>
@@ -63,11 +65,11 @@
       </div>
     </section>
     <section>
-      <div class="container">
+      <div class="jumbotron container">
         <div class="row">
           <div class="col-12 text-center">
-            <h1>Projects</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, magni, doloribus, possimus eum sapiente deleniti doloremque fugit ut expedita molestiae iusto debitis eveniet modi obcaecati ipsam quos quis labore dicta.</p>
+            <h2>Projects</h2>
+            <p>Take a look at some of the Industrial Design project's that I've worked on so far!</p>
           </div>
         </div>
       </div>
@@ -75,35 +77,58 @@
     <section>
       <div class="container mt-2">
         <div class="row">
-          <div class="col-md-4 col-12">
+          <div class="col-md-6 col-12">
             <ul class="list-unstyled">
               <li class="media">
-                <img class="mr-3" src="images/hachi-thumb.png" width="300" height="300" alt="Hachi project thumbnail">
-                <div class="media-body">
-                  <h5 class="mt-0 mb-1">Hachi</h5>
+                <div class="image-wrapper">
+                  <img class="mr-3 hover-image" src="images/hachi-thumb.png" onclick="onClick(this)" width="300" height="300" data-url="./hachi.html" alt="Hachi project thumbnail">
+                  <div class="overlay-text">READ MORE</div>
+                </div>
+                <div class="media-body" style="padding-left: 5px">
+                  <h5 class="mt-0 mb-1"><b>HACHI</b></h5>
                   Hydroponic System
                 </div>
               </li>
             </ul>
           </div>
-          <div class="col-md-4 col-12">
+          <div class="col-md-6 col-12">
             <ul class="list-unstyled">
               <li class="media">
-                <img class="mr-3" src="images/basis-thumb.png" width="300" height="300" alt="Basis project thumbnail">
-                <div class="media-body">
-                  <h5 class="mt-0 mb-1">Basis</h5>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                <div class="image-wrapper">
+                  <img class="mr-3 hover-image" src="images/split-thumb.png" onclick="onClick(this)" width="300" height="300" data-url="./split.html" alt="Split project thumbnail">
+                  <div class="overlay-text">READ MORE</div>
+                </div>
+                <div class="media-body" style="padding-left: 5px">
+                  <h5 class="mt-0 mb-1"><b>SPLIT</b></h5>
+                  Salt & Pepper Grinders
                 </div>
               </li>
             </ul>
           </div>
-          <div class="col-md-4 col-12">
+          <div class="col-md-6 col-12">
             <ul class="list-unstyled">
               <li class="media">
-                <img class="mr-3" src="images/split-thumb.png" width="300" height="300"  alt="Split project thumbnail">
-                <div class="media-body">
-                  <h5 class="mt-0 mb-1">Split</h5>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                <div class="image-wrapper">
+                  <img class="mr-3 hover-image" src="images/basis-thumb.png" onclick="onClick(this)" width="300" height="300" data-url="./basis.html" alt="Basis project thumbnail">
+                  <div class="overlay-text">READ MORE</div>
+                </div>
+                <div class="media-body" style="padding-left: 5px">
+                  <h5 class="mt-0 mb-1"><b>BASIS</b></h5>
+                  Organization
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6 col-12">
+            <ul class="list-unstyled">
+              <li class="media">
+                <div class="image-wrapper">
+                  <img class="mr-3 hover-image" src="images/split-thumb.png" onclick="onClick(this)" width="300" height="300" data-url="./sunware.html" alt="Sunware Set project thumbnail">
+                  <div class="overlay-text">READ MORE</div>
+                </div>
+                <div class="media-body" style="padding-left: 5px">
+                  <h5 class="mt-0 mb-1"><b>SUNWARE SET</b></h5>
+                  Furniture Set
                 </div>
               </li>
             </ul>
@@ -111,7 +136,7 @@
         </div>
       </div>
     </section>
-    <section>
+    <!-- <section>
       <div class="container">
         <div class="row">
           <div class="col-12 text-center">
@@ -145,21 +170,13 @@
           <div class="col-md-3 col-6 mt-md-0 mt-1"><img class="img-fluid float-left" src="images/200x200.gif" alt=""></div>
         </div>
       </div>
-    </section>
-    <hr>
+    </section> -->
+    <!-- <hr>
     <section>
-      <div class="container">
-        <div class="row">
-          <div class="col-12 text-center">
-            <h1>Lorem ipsum dolor sit amet</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, magni, doloribus, possimus eum sapiente deleniti doloremque fugit ut expedita molestiae iusto debitis eveniet modi obcaecati ipsam quos quis labore dicta.</p>
-            <button type="button" class="btn btn-success">Get in touch</button>
-          </div>
-        </div>
-      </div>
+      
     </section>
-    <hr>
-    <div class="section">
+    <hr> -->
+    <!-- <div class="section">
       <div class="container">
         <div class="row">
           <div class="col-md-4 col-12">
@@ -186,13 +203,19 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <hr>
     <footer class="text-center">
-      <div class="container">
+      <div class="jumbotron container">
         <div class="row">
-          <div class="col-12">
-            <p>Copyright © MyCompany. All rights reserved.</p>
+          <div class="col-12 text-center">
+            <h2>CONTACT ME</h2>
+            <p>Want to hire me? Send me an Email!</p>
+            <p>Email: jade.achen@gmail.com</p>
+            <p>Phone: +1 (913) 904-4635</p>
+            <p><a href="https://www.linkedin.com/in/jade-achen-06b971331/"><u>LinkedIn: Jade Achen</u></a></p>
+            <!-- <button type="button" class="btn btn-success">Get in touch</button> -->
+             <p></p>
           </div>
         </div>
       </div>
