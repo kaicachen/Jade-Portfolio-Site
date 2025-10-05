@@ -19,3 +19,4 @@
   max-width: 100%;
   height: auto;
 }
+- Edit her opening text to: I'm Jade Achen, a third-year Industrial Design student at Kansas State University. I’m passionate about using art and design to build meaningful connections and help communities.
