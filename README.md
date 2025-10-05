@@ -13,3 +13,4 @@
   - Basis
   - Split
   - Sunware
+- Look into email forwarding from ideas@jadeachen.com to gmail
