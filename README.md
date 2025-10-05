@@ -3,6 +3,7 @@
 - Add Responsiveness: 
   - Fix "Extracurriculars" on iPad
   - Fix Quote Questions to use padding instead of columns
+  - Fix Hachi Lin image and text overlap on iPad
 - Resize Images:
   - Hachi User Journey
   - Hachi Final Design Solution
