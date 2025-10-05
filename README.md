@@ -13,4 +13,9 @@
   - Basis
   - Split
   - Sunware
-- Look into email forwarding from ideas@jadeachen.com to gmail
+- Research email forwarding from ideas@jadeachen.com to gmail
+- Research use of responsive image styling: img
+{
+  max-width: 100%;
+  height: auto;
+}
