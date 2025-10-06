@@ -4,20 +4,9 @@
   - Fix "Extracurriculars" on iPad
   - Fix Quote Questions to use padding instead of columns
   - Fix Hachi Lin image and text overlap on iPad
-- Resize Images:
-  - Hachi User Journey
-  - Hachi Final Design Solution
-- Add Text:
-  - Split
-  - Sunware
-- Add Images:
-  - Basis
-  - Split
-  - Sunware
-- Research email forwarding from ideas@jadeachen.com to gmail
+- Fix alt-text for images (index and hachi should be good?)
 - Research use of responsive image styling: img
 {
   max-width: 100%;
   height: auto;
 }
-- Edit her opening text to: I'm Jade Achen, a third-year Industrial Design student at Kansas State University. I’m passionate about using art and design to build meaningful connections and help communities.
