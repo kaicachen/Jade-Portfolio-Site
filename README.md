@@ -7,6 +7,7 @@
 - Research use of responsive image styling: img
 - Fix some wording/grammar
 - On Hachi - remove "NOTE: Need to recrop and size these images to fit better." under User Journey heading.
+- Research/implement use of 'include files' for header and footer code.
 {
   max-width: 100%;
   height: auto;
